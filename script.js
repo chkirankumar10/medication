@@ -1,69 +1,65 @@
 let medicationData = [];
 
-	// DOM elements
-	const medicationForm = document.querySelector('#medication-form');
-	const medicationList = document.querySelector('#medication-list');
-	const reminderForm = document.querySelector('#reminder-form');
-	const reminderList = document.querySelector('#reminder-list');
 
-	// Event listeners
-	medicationForm.addEventListener('submit', addMedication);
-	reminderForm.addEventListener('submit', addReminder);
+const medicationForm = document.querySelector('#medication-form');
+const medicationList = document.querySelector('#medication-list');
+const reminderForm = document.querySelector('#reminder-form');
+const reminderList = document.querySelector('#reminder-list');
 
-	// Functions
-	function addMedication(e) {
-	    e.preventDefault();
 
-	    // Get form values
-	    const medicationName = document.querySelector('#medication-name').value;
-	    const dosage = document.querySelector('#dosage').value;
+medicationForm.addEventListener('submit', addMedication);
+reminderForm.addEventListener('submit', addReminder);
 
-	    // Create medication object
-	    const medication = {
-	        name: medicationName,
-	        dosage: dosage
-	    };
 
-	    // Add medication to data array
-	    medicationData.unshift(medication);
+function addMedication(e) {
+    e.preventDefault();
 
-	    // Render medication list
-	    renderMedicationList();
+    // Get form values
+    const medicationName = document.querySelector('#medication-name').value;
+    const dosage = document.querySelector('#dosage').value;
 
-	    // Update dosage information
-	    updateDosageInformation();
-	}
+    // Create medication object
+    const medication = {
+        name: medicationName,
+        dosage: dosage
+    };
 
-	function addReminder(e) {
-	    e.preventDefault();
+    // Add medication to data array
+    medicationData.unshift(medication);
 
-	    // Get reminder text
-	    const reminderText = document.querySelector('#reminder').value;
+    // Render medication list
+    renderMedicationList();
 
-	    // Create reminder list item
-	    const reminderListItem = document.createElement('li');
-	    reminderListItem.textContent = reminderText;
+    // Update dosage information
+    updateDosageInformation();
+}
 
-	    // Append reminder list item to reminder list
-	    reminderList.appendChild(reminderListItem);
-	}
+function addReminder(e) {
+    e.preventDefault();
 
-	function renderMedicationList() {
-	    // Clear medication list
-	    medicationList.innerHTML = '';
+    // Get reminder text
+    const reminderText = document.querySelector('#reminder').value;
 
-	    // Render medication list items
-	    medicationData.forEach(medication => {
-	        const medicationListItem = document.createElement('li');
-	        medicationListItem.textContent = `${medication.name} - ${medication.dosage}`;
-	        medicationList.appendChild(medicationListItem);
-	    });
-	}
+    // Create reminder list item
+    const reminderListItem = document.createElement('li');
+    reminderListItem.textContent = reminderText;
 
-	function updateDosageInformation() {
-	    // Get first medication in data array
-	    const firstMedication = medicationData[0];
+    // Append reminder list item to reminder list
+    reminderList.appendChild(reminderListItem);
+}
 
-	    // Update dosage information
-	    document.querySelector('#dosage-information').textContent = `${firstMedication.name} - ${firstMedication.dosage}`;
-	}
+function renderMedicationList() {
+    medicationList.innerHTML = '';
+
+    medicationData.forEach(medication => {
+        const medicationListItem = document.createElement('li');
+        medicationListItem.textContent = `${medication.name} - ${medication.dosage}`;
+        medicationList.appendChild(medicationListItem);
+    });
+}
+
+function updateDosageInformation() {
+    const firstMedication = medicationData[0];
+
+    document.querySelector('#dosage-information').textContent = `${firstMedication.name} - ${firstMedication.dosage}`;
+}
