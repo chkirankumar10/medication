@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Medical Reminder App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
 
-  <body>
+<head>
+    <title>Medical Reminder App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+
+<body>
     <header>
-      <h1>Medical Reminder App</h1>
+        <h1>Medical Reminder App</h1>
     </header>
 
     <main>
-      <form id="medication-form">
-        <label for="medication-name">Medication Name:</label>
-        <input type="text" id="medication-name" required />
+        <form id="medication-form">
+            <label for="medication-name">Medication Name:</label>
+            <input type="text" id="medication-name" required>
 
-        <label for="dosage">Dosage:</label>
-        <input type="number" id="dosage" required />
+            <label for="dosage">Dosage:</label>
+            <input type="number" id="dosage" required>
 
-        <input type="submit" value="Add Medication" />
-      </form>
+            <input type="submit" value="Add Medication">
+        </form>
 
-      <h2>Current Medications:</h2>
-      <ul id="medication-list">
-        <!-- Medication list items will be added dynamically here -->
-      </ul>
+        <h2>Current Medications:</h2>
+        <ul id="medication-list">
+        </ul>
 
-      <form id="reminder-form">
-        <label for="reminder">Add Reminder:</label>
-        <input type="text" id="reminder" required />
 
-        <input type="submit" value="Add Reminder" />
-      </form>
-
-      <h2>Reminders:</h2>
-      <ul id="reminder-list">
-        <!-- Reminder list items will be added dynamically here -->
-      </ul>
+        <div class="form-container">
+            <h2>Add Reminder</h2>
+            <form id="reminder-form">
+                <label for="reminder-name">Reminder Name:</label>
+                <input type="text" id="reminder-name" name="reminder-name" required>
+                <label for="reminder-time">Reminder Time:</label>
+                <input type="time" id="reminder-time" name="reminder-time" required>
+                <button type="submit">Add Reminder</button>
+            </form>
+        </div>
+        <h2>Reminders:</h2>
+        <ul id="reminder-list">
+        </ul>
     </main>
 
     <footer>
-      <p>&copy; 2023 Medical Reminder App</p>
+        <p>&copy; 2023 Medical Reminder App</p>
     </footer>
-  </body>
+
+
+</body>
+
 </html>
