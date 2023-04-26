@@ -18,25 +18,16 @@ h1 {
     font-size: 30px;
 }
 
-main {
-    padding: 20px;
-}
 
-h2 {
-    text-align: center;
-    margin-top: 0px;
 
+.form-container h2 {
+    margin-top: 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
 }
 
 input[type="text"],
@@ -48,6 +39,55 @@ select {
     border-radius: 5px;
 }
 
+
+
+
+.list-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.list-container h2 {
+    margin-top: 0;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-container li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
 input[type="submit"] {
     padding: 10px;
     background-color: #333;
@@ -55,25 +95,7 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
 }
 
 .form-container button[type="submit"] {
@@ -86,12 +108,11 @@ footer {
     cursor: pointer;
 }
 
-.form-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 
 .form-container input[type="text"],
